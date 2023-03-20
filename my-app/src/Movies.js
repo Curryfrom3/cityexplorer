@@ -6,11 +6,12 @@ class Movies extends React.Component {
   render() {
     return (
       <>
-        {this.props.movieData.map((movie) => {
+        {this.props.movieData.map((movie,index) => {
           return (
           <Movie 
             // image_url src={} alt={} />
               title={movie.title}
+              key={index}
               release_date={movie.release_date}
               overview={movie.overview}
               vote_average={movie.vote_average}
