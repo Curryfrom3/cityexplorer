@@ -5,6 +5,7 @@ import axios from 'axios';
 import Cities from './Cities';
 import Weather from './Weather';
 import Movies from './Movies'
+import { Console } from 'console';
 
 
 class App extends React.Component {
@@ -33,7 +34,8 @@ class App extends React.Component {
   getCityData = async (e) => {
     e.preventDefault();
 
-    try {
+    try { 
+      console.log(process.env.REACT_APP_LOCATION_IQ_API_KEY)
       let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATION_IQ_API_KEY}&q=${this.state.city}&format=json`;
 
       
